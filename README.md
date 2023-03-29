@@ -25,3 +25,4 @@ pip install -r requirements.txt
 ```bash
 export USERNAME:yourusername
 ```
+TODO: rest of documentation 
