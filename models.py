@@ -6,26 +6,26 @@ from typing import List
 from diffsync import DiffSyncModel
 
 
-class Device(DiffSyncModel):
+class CustomField(DiffSyncModel):
     """Example model of a network Device."""
 
-    _modelname = "device"
+    _modelname = "custom_field"
     _identifiers = ("name",)
     _attributes = ()
-    _children = {"interface": "interfaces"}
+    _children = {"subnets": "subnets"}
 
     name: str
 
-    interfaces: List = []
+    subnets: List = []
 
 
-class Interface(DiffSyncModel):
+class Subnets(DiffSyncModel):
     """Example model of a network Interface."""
 
-    _modelname = "interface"
-    _identifiers = ("device_name", "name")
+    _modelname = "subnets"
+    _identifiers = ("custom_field", "name")
     _shortname = ("name",)
     _attributes = ()
 
     name: str
-    device_name: str
+    custom_field: str

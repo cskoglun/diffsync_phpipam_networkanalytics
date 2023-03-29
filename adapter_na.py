@@ -6,7 +6,7 @@ import json
 import requests
 
 from diffsync import DiffSync
-from models import Device, Interface
+from models import CustomField, Subnets
 from api_na import Session_NA
 
 try:
@@ -49,7 +49,6 @@ def create_data_set():
         # If successfully able to get list of tags (host groups)
         if response.status_code == 200:
 
-            # Grab the tag details and check if the malicious IP is associated with this tag
             tag_details = json.loads(response.content)
             if "ranges" not in tag_details["data"].keys():
                 pass
@@ -70,11 +69,10 @@ DATA = create_data_set()
 class BackendA(DiffSync):
     """DiffSync adapter implementation."""
 
-    # site = Site
-    device = Device
-    interface = Interface
+    custom_field = CustomField
+    subnets = Subnets
 
-    top_level = ["device"]
+    top_level = ["custom_field"]
 
     type = "Backend A"
 
@@ -83,11 +81,11 @@ class BackendA(DiffSync):
     def load(self):
         """Initialize the BackendA Object by loading some site, device and interfaces from DATA."""
 
-        for device_name, device_data in DATA.items():  # site_data.items():
-            device = self.device(name=device_name)
-            self.add(device)
+        for custom_field, device_data in DATA.items():  # site_data.items():
+            customfield = self.custom_field(name=custom_field)
+            self.add(customfield)
 
             for intf_name in device_data["subnets"]:  # intf_name, desc
-                intf = self.interface(name=intf_name, device_name=device_name)
+                intf = self.subnets(name=intf_name, custom_field=custom_field)
                 self.add(intf)
-                device.add_child(intf)
+                customfield.add_child(intf)

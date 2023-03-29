@@ -5,7 +5,7 @@ import os
 import json
 from diffsync import DiffSync
 
-from models import Device, Interface
+from models import CustomField, Subnets
 from api_pi import Session_PI
 
 
@@ -69,23 +69,26 @@ DATA = datasetfromphpipam()
 class BackendB(DiffSync):
     """DiffSync adapter implementation."""
 
-    device = Device
-    interface = Interface
+    custom_field = CustomField
+    subnets = Subnets
 
-    top_level = ["device"]
+    top_level = ["custom_field"]
+
+    type = "Backend B"
+
     nb = None
 
     def load(self):
-        """Initialize the BackendB Object by loading some site, device and interfaces from DATA."""
+        """Initialize the BackendA Object by loading some site, device and interfaces from DATA."""
 
-        for device_name, device_data in DATA.items():
-            device = self.device(name=device_name)
-            self.add(device)
+        for custom_field, device_data in DATA.items():  # site_data.items():
+            customfield = self.custom_field(name=custom_field)
+            self.add(customfield)
 
-            for intf_name in device_data["subnets"]:
-                intf = self.interface(name=intf_name, device_name=device_name)
+            for intf_name in device_data["subnets"]:  # intf_name, desc
+                intf = self.subnets(name=intf_name, custom_field=custom_field)
                 self.add(intf)
-                device.add_child(intf)
+                customfield.add_child(intf)
 
     def sync_to_na(self):
         """TODO"""
