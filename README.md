@@ -9,4 +9,6 @@ Documentation on DiffSync you find [here](https://diffsync.readthedocs.io/en/lat
 - Custom field in PHPIPAM where you map subnets to Cisco Network Analytics
 - Cisco Network Analytics
 
+This documentation will not cover how to install PHPIPAM or deploy Cisco Network Analytics. 
 
+## How to get started
