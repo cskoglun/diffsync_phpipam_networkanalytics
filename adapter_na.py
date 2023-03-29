@@ -31,7 +31,6 @@ def create_data_set():
     )
 
     tags_data = session.make_request(method="GET", url=url)
-    # Loop through the list and print each tag (host group)
     tag_list = json.loads(tags_data.content)["data"]
     dataset = {}
 
@@ -46,7 +45,6 @@ def create_data_set():
         )
         response = session.make_request("GET", url)
 
-        # If successfully able to get list of tags (host groups)
         if response.status_code == 200:
 
             tag_details = json.loads(response.content)
@@ -81,11 +79,11 @@ class BackendA(DiffSync):
     def load(self):
         """Initialize the BackendA Object by loading some site, device and interfaces from DATA."""
 
-        for custom_field, device_data in DATA.items():  # site_data.items():
+        for custom_field, device_data in DATA.items():  
             customfield = self.custom_field(name=custom_field)
             self.add(customfield)
 
-            for intf_name in device_data["subnets"]:  # intf_name, desc
+            for intf_name in device_data["subnets"]:  
                 intf = self.subnets(name=intf_name, custom_field=custom_field)
                 self.add(intf)
                 customfield.add_child(intf)

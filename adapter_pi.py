@@ -14,9 +14,6 @@ PASSWORD = os.environ.get("PASSWORD")
 HOST = os.environ.get("NA_HOST")
 
 session = Session_PI(USERNAME, PASSWORD, HOST)
-# url = "http://10.101.1.202:80/api/diffsync/sections/"
-# response = session.make_request(method="GET", url=url)
-# pprint(response)
 
 
 def get_subnets():
