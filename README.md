@@ -5,7 +5,8 @@ Documentation on DiffSync you find [here](https://diffsync.readthedocs.io/en/lat
 
 ## Requirements
 - Python installed in your environment
-- PHPIPAM with API enabled
-- Cisco Network Analytics
+- [PHPIPAM](https://phpipam.net/ with API enabled
 - Custom field in PHPIPAM where you map subnets to Cisco Network Analytics
+- Cisco Network Analytics
+
 
