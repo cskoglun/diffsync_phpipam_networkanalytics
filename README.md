@@ -12,3 +12,7 @@ Documentation on DiffSync you find [here](https://diffsync.readthedocs.io/en/lat
 This documentation will not cover how to install PHPIPAM or deploy Cisco Network Analytics. 
 
 ## How to get started
+Create a Python virtual environment
+```bash
+python3 -m venv venv
+```
