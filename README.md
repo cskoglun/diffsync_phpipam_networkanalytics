@@ -21,9 +21,15 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-- Update your virtual environment with credential variables:
-```bash
-export USERNAME:yourusername
+- Update your the credentials.yaml file with your credentials and ip information to the systems
+```yaml
+credentials:
+     username_na: UPDATE
+     username_pi: UPDATE
+     password_na: UPDATE
+     password_pi: UPDATE
+     host_na: UPDATE
+     host_pi: UPDATE
 ```
 
 
