@@ -95,17 +95,5 @@ class BackendA(DiffSync):
                 customfield.add_child(intf)
 
 
-if __name__ == "__main__":
-#    for key, value in yaml.safe_load(open('credentials_chris.yaml'))["credentials"].items():
-#        print(key)
-#        break
-    cred_data = yaml.safe_load(open('credentials_chris.yaml'))
-    USERNAME_PI = cred_data["username_pi"]
-    USERNAME_NA = cred_data["username_na"]
-    PASSWORD_PI = cred_data["password_pi"]
-    PASSWORD_NA = cred_data["password_na"]
-    HOST_PI = cred_data["host_pi"]
-    HOST_NA = cred_data["host_na"]
-
     
        
