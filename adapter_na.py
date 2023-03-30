@@ -2,8 +2,11 @@
 This is the adapter to system Network Analytics (A)
 """
 import os
+import yaml
 import json
 import requests
+
+#import credentials_chris
 
 from diffsync import DiffSync
 from models import CustomField, Subnets
@@ -15,19 +18,25 @@ except:
     pass
 
 # System credentials
-HOST = os.environ.get("SMC_HOST")
-USERNAME = os.environ.get("USERNAME")
-PASSWORD = os.environ.get("PASSWORD")
+cred_data = yaml.safe_load(open('credentials_chris.yaml'))["credentials"]
+
+USERNAME_NA = cred_data["username_na"]
+PASSWORD_NA = cred_data["password_na"]
+HOST_NA = cred_data["host_na"]
+
+# HOST = os.environ.get("SMC_HOST")
+# USERNAME = os.environ.get("USERNAME")
+# PASSWORD = os.environ.get("PASSWORD")
 TENANT_ID = "301"
 
 
 def create_data_set():
     ''' Function requests and creates dataset from System A: Network Analytics'''
     session = Session_NA(
-        smc_password=PASSWORD, smc_host=HOST, smc_user=USERNAME, smc_tenant_id=TENANT_ID
+        smc_password=PASSWORD_NA, smc_host=HOST_NA, smc_user=USERNAME_NA, smc_tenant_id=TENANT_ID
     )
     url = (
-        "https://" + HOST + "/smc-configuration/rest/v1/tenants/" + TENANT_ID + "/tags/"
+        "https://" + HOST_NA + "/smc-configuration/rest/v1/tenants/" + TENANT_ID + "/tags/"
     )
 
     tags_data = session.make_request(method="GET", url=url)
@@ -37,7 +46,7 @@ def create_data_set():
     for item in tag_list:
         url = (
             "https://"
-            + HOST
+            + HOST_NA
             + "/smc-configuration/rest/v1/tenants/"
             + TENANT_ID
             + "/tags/"
@@ -87,3 +96,19 @@ class BackendA(DiffSync):
                 intf = self.subnets(name=intf_name, custom_field=custom_field)
                 self.add(intf)
                 customfield.add_child(intf)
+
+
+if __name__ == "__main__":
+#    for key, value in yaml.safe_load(open('credentials_chris.yaml'))["credentials"].items():
+#        print(key)
+#        break
+    cred_data = yaml.safe_load(open('credentials_chris.yaml'))
+    USERNAME_PI = cred_data["username_pi"]
+    USERNAME_NA = cred_data["username_na"]
+    PASSWORD_PI = cred_data["password_pi"]
+    PASSWORD_NA = cred_data["password_na"]
+    HOST_PI = cred_data["host_pi"]
+    HOST_NA = cred_data["host_na"]
+
+    
+       

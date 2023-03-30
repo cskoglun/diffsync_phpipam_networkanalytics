@@ -42,9 +42,6 @@ def main():
     changes = backend_a.diff_to(backend_b, diff_class=MyDiff)
 
     pprint(changes.str())
-    #print("Diffs can also be represented as a dictionary...")
-    #pprint(changes.dict(), width=120)
-
 
 if __name__ == "__main__":
     main()
