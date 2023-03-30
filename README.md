@@ -21,6 +21,10 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+- Pull this repository to your local environment
+```bash
+git pull https://github.com/cskoglun/diffsync_phpipam_networkanalytics.git
+```
 - Update your the credentials.yaml file with your credentials and ip information to the systems
 ```yaml
 credentials:
