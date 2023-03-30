@@ -34,8 +34,8 @@ def main():
     #pprint(backend_a.str())
 
     print()
-    print("Initializing load PHPIPAM")
-    backend_b = BackendB(name="PHPIPAM")
+    print("Initializing load phpIPAM")
+    backend_b = BackendB(name="phpIPAM")
     backend_b.load()
     #pprint(backend_b.str())
 
