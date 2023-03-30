@@ -15,20 +15,35 @@ from adapter_pi import BackendB
 from diffsync.logging import enable_console_logging
 from diffsync import Diff
 
+class MyDiff(Diff):
+    """Custom Diff class to control the order of the custom field objects."""
+
+    @classmethod
+    def order_children_site(cls, children):
+        """Return the site children ordered in alphabetical order."""
+        keys = sorted(children.keys(), reverse=False)
+        for key in keys:
+            yield children[key]
 
 def main():
     """Main function"""
+    print()
+    print("Initializing load from Network Analytics")
     backend_a = BackendA(name="Network Analytics")
     backend_a.load()
-    pprint(backend_a.str())
+    #pprint(backend_a.str())
 
-    backend_b = BackendB(name="PHP IPAM")
+    print()
+    print("Initializing load PHPIPAM")
+    backend_b = BackendB(name="PHPIPAM")
     backend_b.load()
-    pprint(backend_b.str())
+    #pprint(backend_b.str())
 
-    changes = backend_a.diff_to(backend_b)
+    changes = backend_a.diff_to(backend_b, diff_class=MyDiff)
 
     pprint(changes.str())
+    #print("Diffs can also be represented as a dictionary...")
+    #pprint(changes.dict(), width=120)
 
 
 if __name__ == "__main__":

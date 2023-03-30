@@ -17,6 +17,7 @@ class CustomField(DiffSyncModel):
     name: str
 
     subnets: List = []
+    #subnets: str
 
 
 class Subnets(DiffSyncModel):

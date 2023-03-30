@@ -77,7 +77,7 @@ class BackendA(DiffSync):
     nb = None
 
     def load(self):
-        """Initialize the BackendA Object by loading some site, device and interfaces from DATA."""
+        """Initialize the BackendA Object by loading custom field and subnets from DATA."""
 
         for custom_field, device_data in DATA.items():  
             customfield = self.custom_field(name=custom_field)
