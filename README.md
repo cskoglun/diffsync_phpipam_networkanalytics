@@ -31,8 +31,15 @@ credentials:
      host_na: UPDATE
      host_pi: UPDATE
 ```
+- If everything is setup correctly, you should now be able to run the main.py file
+```bash
+python main.py
+```
+and the output should be looking like this: 
+```bash
+ '  custom_field: test_value_1 MISSING in Network Analytics\n'
+ '    subnets\n'
+ '      subnets: 11.1.1.0/24 MISSING in Network Analytics\n'
+```
 
-
-
-
-TODO: rest of documentation 
+##TODO: rest of documentation 
