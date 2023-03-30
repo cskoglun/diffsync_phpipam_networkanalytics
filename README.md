@@ -37,6 +37,16 @@ python main.py
 ```
 and the output should be looking like this: 
 ```bash
+(venv) $ python main.py 
+
+Initializing load from Network Analytics
+
+Initializing load PHPIPAM
+
+2023-03-30 15:27.21 [debug    ] Diff calculation between these two datasets will involve 49 models dst=<Backend B "PHPIPAM"> flags=<DiffSyncFlags.NONE: 0> src=<Backend A "Network Analytics">
+2023-03-30 15:27.21 [info     ] Beginning diff calculation     dst=<Backend B "PHPIPAM"> flags=<DiffSyncFlags.NONE: 0> src=<Backend A "Network Analytics">
+2023-03-30 15:27.21 [info     ] Diff calculation complete      dst=<Backend B "PHPIPAM"> flags=<DiffSyncFlags.NONE: 0> src=<Backend A "Network Analytics">
+
  '  custom_field: test_value_1 MISSING in Network Analytics\n'
  '    subnets\n'
  '      subnets: 11.1.1.0/24 MISSING in Network Analytics\n'
