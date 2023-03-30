@@ -1,7 +1,9 @@
 # DiffSync between PHPIPAM and Cisco Network Analytics
-This repository provides a minimum viable soluition on how you can demonstrate the value of DiffSync. 
+This repository provides a minimum viable soluition on how you can demonstrate the value of DiffSync. DiffSync is a utility library that can be used to compare and synchronize different datasets. For example, it can be used to compare a list of devices from 2 inventory systems and, if required, synchronize them in either direction. 
 
 Documentation on DiffSync you find [here](https://diffsync.readthedocs.io/en/latest/)
+
+In this example, we use DiffSync in order to investigare if the Host Pools in Cisco Network Analytics are updated with the subnets that are registered in the ipam system PHPIPAM. 
 
 ## Requirements
 - Python installed in your environment
