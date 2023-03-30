@@ -56,3 +56,6 @@ Initializing load PHPIPAM
 ```
 
 ##TODO: rest of documentation 
+
+## Contributing
+This code is developed by Christina Skoglund with inspiration from https://github.com/networktocode/diffsync
