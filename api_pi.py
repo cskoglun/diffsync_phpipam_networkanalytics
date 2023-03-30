@@ -53,17 +53,3 @@ class Session_PI:
         """
         response = self.api_session.request(method, url, **kwargs)
         return response
-
-
-if __name__ == "__main__":
-    from pprint import pprint
-
-    # following script is testing the code
-    USERNAME = os.environ.get("USERNAME_PI")
-    PASSWORD = os.environ.get("PASSWORD")
-    HOST = os.environ.get("NA_HOST")
-
-    session = Session_PI(USERNAME, PASSWORD, HOST)
-    url = "http://10.101.1.202:80/api/diffsync/sections/"
-    response = session.make_request(method="GET", url=url)
-    pprint(response.content)
