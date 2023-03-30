@@ -9,20 +9,17 @@ from diffsync import DiffSync
 from models import CustomField, Subnets
 from api_pi import Session_PI
 
-
-# USERNAME = os.environ.get("USERNAME_PI")
-# PASSWORD = os.environ.get("PASSWORD")
-# HOST = os.environ.get("PI_HOST")
+# System credentials
 cred_data = yaml.safe_load(open('credentials_chris.yaml'))["credentials"]
 USERNAME_PI = cred_data["username_pi"]
 PASSWORD_PI = cred_data["password_pi"]
 HOST_PI = cred_data["host_pi"]
 
-session = Session_PI(USERNAME_PI, PASSWORD_PI, HOST_PI)
-
-
 def get_subnets():
     """Function gets all subnet data in system PHPIPAM"""
+
+    # Start session
+    session = Session_PI(USERNAME_PI, PASSWORD_PI, HOST_PI)
     url = f"http://{HOST_PI}/api/diffsync/subnets/"
     response = session.make_request(method="GET", url=url)
     data = json.loads(response.content)

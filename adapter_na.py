@@ -24,14 +24,13 @@ USERNAME_NA = cred_data["username_na"]
 PASSWORD_NA = cred_data["password_na"]
 HOST_NA = cred_data["host_na"]
 
-# HOST = os.environ.get("SMC_HOST")
-# USERNAME = os.environ.get("USERNAME")
-# PASSWORD = os.environ.get("PASSWORD")
 TENANT_ID = "301"
 
 
 def create_data_set():
     ''' Function requests and creates dataset from System A: Network Analytics'''
+    
+    # Start session
     session = Session_NA(
         smc_password=PASSWORD_NA, smc_host=HOST_NA, smc_user=USERNAME_NA, smc_tenant_id=TENANT_ID
     )
