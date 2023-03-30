@@ -10,7 +10,7 @@ from models import CustomField, Subnets
 from api_pi import Session_PI
 
 # System credentials
-cred_data = yaml.safe_load(open('credentials_chris.yaml'))["credentials"]
+cred_data = yaml.safe_load(open('credentials.yaml'))["credentials"]
 USERNAME_PI = cred_data["username_pi"]
 PASSWORD_PI = cred_data["password_pi"]
 HOST_PI = cred_data["host_pi"]

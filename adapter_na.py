@@ -18,7 +18,7 @@ except:
     pass
 
 # System credentials
-cred_data = yaml.safe_load(open('credentials_chris.yaml'))["credentials"]
+cred_data = yaml.safe_load(open('credentials.yaml'))["credentials"]
 
 USERNAME_NA = cred_data["username_na"]
 PASSWORD_NA = cred_data["password_na"]
