@@ -6,8 +6,6 @@ import yaml
 import json
 import requests
 
-#import credentials_chris
-
 from diffsync import DiffSync
 from models import CustomField, Subnets
 from api_na import Session_NA
