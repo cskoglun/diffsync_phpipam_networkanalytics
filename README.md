@@ -5,7 +5,7 @@ Documentation on DiffSync you find [here](https://diffsync.readthedocs.io/en/lat
 
 In this example, we use DiffSync in order to investigare if the Host Pools in Cisco Network Analytics are updated with the subnets that are registered in the ipam system phpIPAM. 
 
-Cisco Network Analytics provides advanced AI-enabled analytics available across all Cisco network platforms. It provides the high-quality visibility and fast remediation that you need to help assure service, from user to applications.
+[Cisco Network Analytics](https://www.cisco.com/c/en/us/solutions/analytics.html) provides advanced AI-enabled analytics available across all Cisco network platforms. It provides the high-quality visibility and fast remediation that you need to help assure service, from user to applications.
 
 ## Requirements
 - Python installed in your environment
