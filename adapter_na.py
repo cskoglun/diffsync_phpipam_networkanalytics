@@ -1,9 +1,8 @@
 """ 
 This is the adapter to system Network Analytics (A)
 """
-import os
-import yaml
 import json
+import yaml
 import requests
 
 from diffsync import DiffSync

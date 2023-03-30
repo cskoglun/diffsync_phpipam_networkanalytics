@@ -2,7 +2,6 @@
 This module communicates with PHPIPAM and 
 collects subnet data. 
 """
-import os
 import requests
 import base64
 

@@ -1,7 +1,6 @@
 """ 
 This is the adapter to system PHPIPAM (B)
 """
-import os
 import json
 import yaml
 from diffsync import DiffSync
