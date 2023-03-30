@@ -33,7 +33,7 @@ credentials:
 ```
 - If everything is setup correctly, you should now be able to run the main.py file
 ```bash
-python main.py
+(venv) $ python main.py
 ```
 and the output should be looking like this: 
 ```bash
