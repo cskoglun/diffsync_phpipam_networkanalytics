@@ -6,7 +6,7 @@ Documentation on DiffSync you find [here](https://diffsync.readthedocs.io/en/lat
 ## Requirements
 - Python installed in your environment
 - [PHPIPAM](https://phpipam.net/) with API enabled
-- Custom field in PHPIPAM where you map subnets to Cisco Network Analytics
+- Custom field in PHPIPAM where you map subnets to Cisco Network Analytics called "Network_Analytics_Pool"
 - Cisco Network Analytics
 
 This documentation will not cover how to install PHPIPAM or deploy Cisco Network Analytics. 
