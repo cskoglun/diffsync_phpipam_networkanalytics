@@ -64,4 +64,4 @@ Initializing load phpIPAM
 ##TODO: rest of documentation 
 
 ## Contributing
-This code is developed by Christina Skoglund with inspiration from https://github.com/networktocode/diffsync
+This code is developed by Christina Skoglund (cskoglun@cisco.com) with inspiration from https://github.com/networktocode/diffsync
