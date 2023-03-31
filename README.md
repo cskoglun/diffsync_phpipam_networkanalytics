@@ -18,16 +18,16 @@ This documentation will not cover how to install phpIPAM or deploy Cisco Network
 ## How to get started
 - Create a Python virtual environment and activate it
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+$ python3 -m venv venv
+$ source venv/bin/activate
 ```
 - Install the necessary dependencies
 ```bash
-pip install -r requirements.txt
+(venv) $ pip install -r requirements.txt
 ```
 - Pull this repository to your local environment
 ```bash
-git pull https://github.com/cskoglun/diffsync_phpipam_networkanalytics.git
+(venv) $ git pull https://github.com/cskoglun/diffsync_phpipam_networkanalytics.git
 ```
 - Update your the credentials.yaml file with your credentials and ip information to the systems
 ```yaml
