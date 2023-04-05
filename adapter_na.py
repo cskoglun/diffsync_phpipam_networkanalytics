@@ -15,11 +15,12 @@ except:
     pass
 
 # System credentials
-cred_data = yaml.safe_load(open('credentials.yaml'))["credentials"]
+# cred_data = yaml.safe_load(open('credentials_chris.yaml'))["credentials"]
 
-USERNAME_NA = cred_data["username_na"]
-PASSWORD_NA = cred_data["password_na"]
-HOST_NA = cred_data["host_na"]
+# USERNAME_NA = cred_data["username_na"]
+# PASSWORD_NA = cred_data["password_na"]
+# HOST_NA = cred_data["host_na"]
+
 
 TENANT_ID = "301"
 
@@ -93,6 +94,12 @@ class BackendA(DiffSync):
                 self.add(intf)
                 customfield.add_child(intf)
 
+if __name__ == "__main__":
+
+
+    data = create_data_set()
 
     
+    
+
        
