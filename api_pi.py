@@ -23,7 +23,7 @@ class Session_PI:
         """
         Authentication function
         """
-        url = f"http://{self.host}/api/diffsync/user"
+        url = f"https://{self.host}/api/diffsync/user"
         login_string = f"{self.user}:{self.password}"
         base64_string = base64.b64encode(login_string.encode("ascii")).decode("ascii")
         headers = {
@@ -56,14 +56,5 @@ class Session_PI:
 
 
 if __name__ == "__main__":
-    from pprint import pprint
+    print("You executed this script as the main script")
 
-    # following script is testing the code
-    USERNAME = os.environ.get("USERNAME_PI")
-    PASSWORD = os.environ.get("PASSWORD")
-    HOST = os.environ.get("NA_HOST")
-
-    session = Session_PI(USERNAME, PASSWORD, HOST)
-    url = "http://10.101.1.202:80/api/diffsync/sections/"
-    response = session.make_request(method="GET", url=url)
-    pprint(response.content)
